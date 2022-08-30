@@ -8,6 +8,8 @@ import Login from './views/Login.vue'
 import Servicos from './components/servicos/Servicos.vue'
 import Site from './views/Site.vue'
 import Vendas from './components/vendas/Vendas.vue'
+import VendasPadrao from './components/vendas/VendasPadrao.vue'
+
 
 const routes = [
     {
@@ -16,12 +18,13 @@ const routes = [
         children:[
             {path: 'vendas', component: Vendas, children:
                 [
-                    {path: 'leads', component: Leads},
-                    {path: 'leads/:id', component: Lead},
-                    {path: 'contratos', component: Contratos},
+                    {path: 'leads', name:'leads', component: Leads},
+                    {path: 'leads/:id', name: 'lead', component: Lead},
+                    {path: 'contratos', name: 'contratos', component: Contratos},
+                    {path: '', component: VendasPadrao },
                 ]
             },
-            {path: 'servicos', component: Servicos},
+            {path: 'servicos', name: 'servicos' , component: Servicos},
             {path: 'dashboard', component: Dashboard},
         ]
     },

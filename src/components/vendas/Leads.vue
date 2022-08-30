@@ -17,7 +17,7 @@
                 <td>{{d.nome}}</td>
                 <td>{{d.telefone}}</td>
                 <td>
-                    <router-link :to="`/home/vendas/leads/${d.id}`" class="btn btn-sm btn-primary"></router-link>
+                    <router-link :to="{name: 'lead', params: {id: d.id}}" class="btn btn-sm btn-primary"></router-link>
                 </td>
             </tr>
         </tbody>
