@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 import Lead from './components/vendas/Lead.vue'
 import Leads from './components/vendas/Leads.vue'
 import Login from './views/Login.vue'
+import Servico from './components/servicos/Servico.vue'
 import Servicos from './components/servicos/Servicos.vue'
 import Site from './views/Site.vue'
 import Vendas from './components/vendas/Vendas.vue'
@@ -24,7 +25,11 @@ const routes = [
                     {path: '', component: VendasPadrao },
                 ]
             },
-            {path: 'servicos', name: 'servicos' , component: Servicos},
+            {path: 'servicos', name: 'servicos' , component: Servicos, children:
+                [
+                    {path: ':id', name: 'servico', component: Servico}
+                ]
+            },
             {path: 'dashboard', component: Dashboard},
         ]
     },
